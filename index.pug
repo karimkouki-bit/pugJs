@@ -1,0 +1,74 @@
+- 
+  var className = 'font'
+  var themeName = 'karim'
+mixin skillList   
+       li angular
+       li react
+       li vue
+mixin features(featName)
+  div.name=featName   
+doctype 
+html 
+    head 
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+        link(rel="stylesheet", href="style.css")
+        meta(charset='utf-8')
+        title karim
+        include includes/style.pug
+    body
+      // block append pageInfo 
+         block prepend ....
+      block testingContent
+        .main this content from main page
+        div(class="main")
+        div: a(href=""): img(src="", alt="")
+        p <strong>hello world</strong>
+        
+        div(class="name " + className)
+        ul.main
+            li php #{themeName.toUpperCase()}
+            li sql
+            li sass
+            li pugjs
+            +skillList
+        
+        //- White Space Control
+       
+        p welcome 
+          | i love programming
+        
+        p
+          | sass
+        p welcome
+        |
+        |
+        . 
+          | sss
+        //- this is for loop
+           
+          
+        ul 
+           - for (var x = 0; x <= 20; x++)
+             li item
+        - var z = 0;
+        ul 
+          while z < 20
+           li= z++
+
+        - var myArray =[1,2,3,4,5];
+        each val, index in myArray
+          div= index + ' ' + val
+        else 
+          p there is no div
+        p hello world 
+         + features("welcome")
+        - var friends = 10
+        case friends 
+          when 1
+           p you have one friends 
+          when 2
+           p you have 2 friends 
+          default 
+           p you have #{friends} friends
+    include includes/script.pug
